@@ -1,1 +1,12 @@
+name: Sync Action
 
+on:
+  schedule:
+      - cron: '0 2 * * 1-5'
+
+jobs:
+  git-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call a Bash Script
+        run:  bash ${GITHUB_WORKSPACE}/scripts/extract.sh 
