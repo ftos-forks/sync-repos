@@ -17,6 +17,6 @@ jobs:
       - name: Bash Script
         shell: 'bash'
         run: |
-          chmod +x ./ftos-forks/sync-repos/scripts/extract.sh
-          sh ./ftos-forks/sync-repos/scripts/extract.sh 
+          chmod +x ./scripts/extract.sh
+          sh ./scripts/extract.sh 
           
