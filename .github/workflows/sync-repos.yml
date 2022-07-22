@@ -8,4 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Call a Bash Script
-        run:  sh ./ftos-forks/sync-repos/scripts/extract.sh 
+        run: |
+          chmod +x ./ftos-forks/sync-repos/scripts/extract.sh
+          sh ./ftos-forks/sync-repos/scripts/extract.sh 
+          
