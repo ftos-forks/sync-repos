@@ -16,6 +16,8 @@ jobs:
         
       - name: Bash Script
         shell: 'bash'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           chmod +x ./scripts/extract.sh
           sh ./scripts/extract.sh 
