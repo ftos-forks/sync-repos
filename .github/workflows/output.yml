@@ -20,3 +20,30 @@ jobs:
     needs: job1
     steps:
       - run: echo ${{needs.job1.outputs.output1}} ${{needs.job1.outputs.output2}}
+  
+  job3:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - run: mkdir -p dist
+    - uses: actions/upload-artifact@master
+      with:
+        name: hello-world-artifact
+        path: dist/world.txt
+    - name: Bash Script
+      shell: 'bash'
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        chmod +x ./scripts/extract.sh
+        sh ./scripts/extract.sh > dist/world.txt
+
+  job4:
+    runs-on: macos-latest
+    steps:
+    - run: mkdir -p dist
+    - uses: actions/download-artifact@master
+      with:
+        name: hello-world-artifact
+        path: dist/world.txt
+    - run: cat dist/world.txt
