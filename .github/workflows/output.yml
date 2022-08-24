@@ -26,10 +26,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - run: mkdir -p dist
-    - uses: actions/upload-artifact@master
-      with:
-        name: hello-world-artifact
-        path: dist/world.txt
+    - run: echo hello > dist/world.txt
     - name: Bash Script
       shell: 'bash'
       env:
@@ -37,6 +34,10 @@ jobs:
       run: |
         chmod +x ./scripts/extract.sh
         sh ./scripts/extract.sh > dist/world.txt
+    - uses: actions/upload-artifact@master
+      with:
+        name: hello-world-artifact
+        path: dist/world.txt
 
   job4:
     runs-on: ubuntu-latest
