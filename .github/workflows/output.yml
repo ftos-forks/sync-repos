@@ -39,7 +39,8 @@ jobs:
         sh ./scripts/extract.sh > dist/world.txt
 
   job4:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
+    needs: job3
     steps:
     - run: mkdir -p dist
     - uses: actions/download-artifact@master
