@@ -1,11 +1,10 @@
 #/usr/bin/env bash
 org="ftos-forks"
-file="rrepos.json"
 limit=5
 
 gh repo list ${org} --json name --limit ${limit} | jq '.[].name' | tr -d '"'
 
-gh repo list ${org} --json name --limit ${limit} | jq '.[].name' | tr -d '"' > ${file}
+gh repo list ${org} --json name --limit ${limit} | jq '.[].name' | tr -d '"'
 
 while IFS= read -r line
 do
@@ -16,4 +15,4 @@ do
   then
     echo "ftos-forks/$line is forked from $y"
   fi
-done < ${file}
+done
