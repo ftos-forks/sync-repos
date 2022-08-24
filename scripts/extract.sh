@@ -10,7 +10,7 @@ gh repo list ${org} --json name --limit ${limit} | jq '.[].name' | tr -d '"' > $
 while IFS= read -r line
 do
   x=$(curl -u dariusxdragoi:acceces https://api.github.com/repos/ftos-forks/${line}) 
-  cat $x > ./info.json
+  echo $x > ./info.json
   y=$(jq '.parent.full_name' info.json | tr -d '"')
   if [ "$y" != "null" ]
   then
