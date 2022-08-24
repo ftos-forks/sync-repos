@@ -48,4 +48,4 @@ jobs:
       with:
         name: hello-world-artifact
         path: dist/world.txt
-    - run: cat /home/runner/work/sync-repos/sync-repos/dist/world.txt
+    - run: ls /home/runner/work/sync-repos/sync-repos/dist
