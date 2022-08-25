@@ -2,7 +2,7 @@
 org="ftos-forks"
 file="rrepos.json"
 
-gh repo list ${org} --json name | jq '.[].name' | tr -d '"'
+
 
 gh repo list ${org} --json name | jq '.[].name' | tr -d '"' > ${file}
 
