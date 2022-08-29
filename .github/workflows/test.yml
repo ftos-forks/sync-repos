@@ -20,7 +20,18 @@ jobs:
 
           - name: Print Matrix 
             run: echo "matrix content ${{ steps.setup-matrix.outputs.matrix }} "
-          - name: Print
-            run: |
+          
+                
+    json-matrix:
+        runs-on: ubuntu-20.04
+        needs: [setup-build]
+        continue-on-error: false
+        strategy:
+          fail-fast: true
+          max-parallel: 1
+          matrix: ${{fromJson(needs.setup-build.outputs.matrix)}}
+        steps:
+            - name: Print
+              run: |
                 echo ${{ matrix.Source }}
                 echo ${{ matrix.Destination }}
