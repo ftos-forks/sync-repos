@@ -4,32 +4,31 @@ on:
   push
     
 jobs:
-  job3:
+  job1:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - run: mkdir -p dist
-    - run: echo hello > dist/world.txt
+    - run: mkdir -p dirwithjson
     - name: Bash Script
       shell: 'bash'
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         chmod +x ./scripts/extract.sh
-        sh ./scripts/extract.sh > dist/world.txt
+        sh ./scripts/extract.sh > dirwithjson/source-dest.json
     - uses: actions/upload-artifact@master
       with:
         name: hello-world-artifact
-        path: dist/world.txt
+        path: dirwithjson/source-dest.json
 
-  job4:
+  job2:
     runs-on: ubuntu-latest
-    needs: job3
+    needs: job1
     steps:
     - run: mkdir -p dist
     - uses: actions/download-artifact@master
       with:
         name: hello-world-artifact
-        path: dist/world.txt
+        path: dirwithjson/source-dest.json
     - run: |
-        cat /home/runner/work/sync-repos/sync-repos/dist/world.txt/world.txt
+        cat /home/runner/work/sync-repos/sync-repos/dirwithjson/source-dest.json/source-dest.json
