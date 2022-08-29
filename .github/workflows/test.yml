@@ -1,0 +1,20 @@
+name: Sample Conditional Matrix Build
+
+on: push
+
+setup-build:
+    runs-on: ubuntu-20.04
+    outputs:
+      matrix: ${{ steps.setup-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout code
+        uses: ftos-forks/checkout@v2
+        
+      - name: Get strategy configuration
+        id: setup-matrix
+        uses: ftos-forks/conditional-build-matrix@0.1.0
+        with:
+          inputFile: '.github/source-dest.json' 
+          
+      - name: Print Matrix 
+        run: echo "matrix content ${{ steps.setup-matrix.outputs.matrix }} "
