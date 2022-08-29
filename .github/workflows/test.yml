@@ -16,6 +16,7 @@ jobs:
             uses: ftos-forks/conditional-build-matrix@0.1.0
             with:
               inputFile: '.github/source-dest.json' 
+              filter: '[?Source]'
 
           - name: Print Matrix 
             run: echo "matrix content ${{ steps.setup-matrix.outputs.matrix }} "
