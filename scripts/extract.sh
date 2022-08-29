@@ -13,6 +13,9 @@ do
   y=$(jq '.parent.full_name' info.json | tr -d '"')
   if [ "$y" != "null" ]
   then
-    echo "ftos-forks/$line is forked from $y"
+    echo "    {"
+    echo "        "Source": "git@github.com:$y","
+    echo "        "Destination": "git@github.com:ftos-forks/$line""
+    echo "    },"
   fi
 done < ${file}
