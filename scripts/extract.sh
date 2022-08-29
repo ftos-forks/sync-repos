@@ -20,7 +20,7 @@ do
   fi
 done < ${file}
 
-sed '$d' output.txt
-echo "    }" >> output.txt
-echo "]" >> output.txt
-cat ./output.txt
+sed '$d' < output.txt > last.txt
+echo "    }" >> last.txt
+echo "]" >> last.txt
+cat ./last.txt
