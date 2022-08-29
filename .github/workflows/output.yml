@@ -49,4 +49,4 @@ jobs:
         name: hello-world-artifact
         path: dist/world.txt
     - run: |
-        awk '{ a=b ; b=$0 } END { print a }' /home/runner/work/sync-repos/sync-repos/dist/world.txt/world.txt
+        cat /home/runner/work/sync-repos/sync-repos/dist/world.txt/world.txt
