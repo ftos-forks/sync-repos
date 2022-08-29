@@ -31,4 +31,4 @@ jobs:
         name: hello-world-artifact
         path: dirwithjson/source-dest.json
     - run: |
-        cat /home/runner/work/sync-repos/sync-repos/dirwithjson/source-dest.json/source-dest.json
+        cat /home/runner/work/sync-repos/sync-repos/dirwithjson/source-dest.json/source-dest.json > .github/source-dest.json
