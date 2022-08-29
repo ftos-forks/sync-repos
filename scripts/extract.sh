@@ -16,7 +16,7 @@ do
     echo "    {" >> output.txt
     echo "        \"Source\": \"git@github.com:$y\"," >> output.txt
     echo "        \"Destination\": \"git@github.com:ftos-forks/$line\"" >> output.txt
-    echo "    }," > output.txt
+    echo "    }," >> output.txt
   fi
 done < ${file}
 
