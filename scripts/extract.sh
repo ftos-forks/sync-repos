@@ -3,7 +3,7 @@ org="ftos-forks"
 file="rrepos.json"
 
 
-
+echo "["
 gh repo list ${org} --json name | jq '.[].name' | tr -d '"' > ${file}
 
 while IFS= read -r line
@@ -14,8 +14,8 @@ do
   if [ "$y" != "null" ]
   then
     echo "    {"
-    echo "        "Source": "git@github.com:$y","
-    echo "        "Destination": "git@github.com:ftos-forks/$line""
+    echo "        '"Source"': '"git@github.com:$y"',"
+    echo "        '"Destination"': '"git@github.com:ftos-forks/$line"'"
     echo "    },"
   fi
 done < ${file}
