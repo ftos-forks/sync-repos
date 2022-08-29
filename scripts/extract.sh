@@ -20,5 +20,7 @@ do
   fi
 done < ${file}
 
+sed '$d' output.txt
+echo "    }" >> output.txt
 echo "]" >> output.txt
 cat ./output.txt
