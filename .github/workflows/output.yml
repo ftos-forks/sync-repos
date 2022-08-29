@@ -48,4 +48,6 @@ jobs:
       with:
         name: hello-world-artifact
         path: dist/world.txt
-    - run: cat /home/runner/work/sync-repos/sync-repos/dist/world.txt/world.txt
+    - run: |
+        sed -e '$s//10-August/' file
+        awk '{ a=b ; b=$0 } END { print a }' /home/runner/work/sync-repos/sync-repos/dist/world.txt/world.txt
