@@ -3,7 +3,7 @@ org="ftos-forks"
 file="rrepos.json"
 
 
-echo "["
+echo "[" > output.txt
 gh repo list ${org} --json name | jq '.[].name' | tr -d '"' > ${file}
 
 while IFS= read -r line
@@ -13,11 +13,12 @@ do
   y=$(jq '.parent.full_name' info.json | tr -d '"')
   if [ "$y" != "null" ]
   then
-    echo "    {"
-    echo "        \"Source\": \"git@github.com:$y\","
-    echo "        \"Destination\": \"git@github.com:ftos-forks/$line\""
-    echo "    },"
+    echo "    {" > output.txt
+    echo "        \"Source\": \"git@github.com:$y\"," > output.txt
+    echo "        \"Destination\": \"git@github.com:ftos-forks/$line\"" > output.txt
+    echo "    }," > output.txt
   fi
 done < ${file}
 
-echo "]"
+echo "]" > output.txt
+cat ./output.txt
