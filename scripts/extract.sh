@@ -14,8 +14,8 @@ do
   if [ "$y" != "null" ]
   then
     echo "    {"
-    echo "        ""Source"": ""git@github.com:$y"","
-    echo "        ""Destination"": ""git@github.com:ftos-forks/$line"""
+    echo "        \"Source\": \"git@github.com:$y\","
+    echo "        \"Destination\": \"git@github.com:ftos-forks/$line\""
     echo "    },"
   fi
 done < ${file}
