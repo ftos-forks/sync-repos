@@ -7,7 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - run: mkdir -p dirwithjson
     - name: Bash Script
       shell: 'bash'
       env:
@@ -15,7 +14,6 @@ jobs:
       run: |
         chmod +x ./scripts/extract.sh
         sh ./scripts/extract.sh > ./.github/source-dest.json
-        pwd
   setup:
         runs-on: ubuntu-20.04
         needs: [extract-repos]
