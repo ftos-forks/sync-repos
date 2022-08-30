@@ -18,6 +18,7 @@ jobs:
         pwd
   setup:
         runs-on: ubuntu-20.04
+        needs: [extract-repos]
         outputs:
           matrix: ${{ steps.setup-matrix.outputs.matrix }}
         steps:
