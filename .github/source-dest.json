@@ -1,1 +1,114 @@
-
+[
+    {
+        "Source": "git@github.com:actions/cache",
+        "Destination": "git@github.com:ftos-forks/cache"
+    },
+    {
+        "Source": "git@github.com:juliangruber/read-file-action",
+        "Destination": "git@github.com:ftos-forks/read-file-action"
+    },
+    {
+        "Source": "git@github.com:tj-actions/changed-files",
+        "Destination": "git@github.com:ftos-forks/changed-files"
+    },
+    {
+        "Source": "git@github.com:tj-actions/glob",
+        "Destination": "git@github.com:ftos-forks/glob"
+    },
+    {
+        "Source": "git@github.com:tj-actions/branch-names",
+        "Destination": "git@github.com:ftos-forks/branch-names"
+    },
+    {
+        "Source": "git@github.com:cypress-io/github-action",
+        "Destination": "git@github.com:ftos-forks/github-action"
+    },
+    {
+        "Source": "git@github.com:actions/github-script",
+        "Destination": "git@github.com:ftos-forks/github-script"
+    },
+    {
+        "Source": "git@github.com:thollander/actions-comment-pull-request",
+        "Destination": "git@github.com:ftos-forks/actions-comment-pull-request"
+    },
+    {
+        "Source": "git@github.com:peter-evans/repository-dispatch",
+        "Destination": "git@github.com:ftos-forks/repository-dispatch"
+    },
+    {
+        "Source": "git@github.com:GitTools/actions",
+        "Destination": "git@github.com:ftos-forks/actions"
+    },
+    {
+        "Source": "git@github.com:peter-evans/close-issue",
+        "Destination": "git@github.com:ftos-forks/close-issue"
+    },
+    {
+        "Source": "git@github.com:peter-evans/create-or-update-comment",
+        "Destination": "git@github.com:ftos-forks/create-or-update-comment"
+    },
+    {
+        "Source": "git@github.com:sigstore/cosign-installer",
+        "Destination": "git@github.com:ftos-forks/cosign-installer"
+    },
+    {
+        "Source": "git@github.com:docker/setup-buildx-action",
+        "Destination": "git@github.com:ftos-forks/setup-buildx-action"
+    },
+    {
+        "Source": "git@github.com:docker/metadata-action",
+        "Destination": "git@github.com:ftos-forks/metadata-action"
+    },
+    {
+        "Source": "git@github.com:docker/login-action",
+        "Destination": "git@github.com:ftos-forks/login-action"
+    },
+    {
+        "Source": "git@github.com:dorny/test-reporter",
+        "Destination": "git@github.com:ftos-forks/test-reporter"
+    },
+    {
+        "Source": "git@github.com:Azure/functions-action",
+        "Destination": "git@github.com:ftos-forks/functionsaction"
+    },
+    {
+        "Source": "git@github.com:Azure/setup-helm",
+        "Destination": "git@github.com:ftos-forks/setup-helm"
+    },
+    {
+        "Source": "git@github.com:Azure/aks-set-context",
+        "Destination": "git@github.com:ftos-forks/aks-set-context"
+    },
+    {
+        "Source": "git@github.com:Azure/setup-kubectl",
+        "Destination": "git@github.com:ftos-forks/setup-kubectl"
+    },
+    {
+        "Source": "git@github.com:actions/setup-node",
+        "Destination": "git@github.com:ftos-forks/setup-node"
+    },
+    {
+        "Source": "git@github.com:frabert/replace-string-action",
+        "Destination": "git@github.com:ftos-forks/replace-string-action"
+    },
+    {
+        "Source": "git@github.com:Codex-/return-dispatch",
+        "Destination": "git@github.com:ftos-forks/return-dispatch"
+    },
+    {
+        "Source": "git@github.com:Codex-/await-remote-run",
+        "Destination": "git@github.com:ftos-forks/await-remote-run"
+    },
+    {
+        "Source": "git@github.com:mathieudutour/github-tag-action",
+        "Destination": "git@github.com:ftos-forks/github-tag-action-1"
+    },
+    {
+        "Source": "git@github.com:NuGet/setup-nuget",
+        "Destination": "git@github.com:ftos-forks/setup-nuget"
+    },
+    {
+        "Source": "git@github.com:ASzc/change-string-case-action",
+        "Destination": "git@github.com:ftos-forks/change-string-case-action"
+    }
+]
