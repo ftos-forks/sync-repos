@@ -14,7 +14,7 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         chmod +x ./scripts/extract.sh
-        sh ./scripts/extract.sh > dirwithjson/source-dest.json
+        sh ./scripts/extract.sh > ./.github/source-dest.json
         pwd
   setup:
         runs-on: ubuntu-20.04
@@ -28,7 +28,7 @@ jobs:
             id: setup-matrix
             uses: ftos-forks/conditional-build-matrix@0.1.0
             with:
-              inputFile: /home/runner/work/sync-repos/sync-repos/dirwithjson/source-dest.json
+              inputFile: './.github/source-dest.json'
               filter: '[?Source]'
           - name: Print Matrix 
             run: echo "matrix content ${{ steps.setup-matrix.outputs.matrix }} "
