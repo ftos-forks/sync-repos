@@ -16,7 +16,7 @@ jobs:
         chmod +x ./scripts/extract.sh
         sh ./scripts/extract.sh > dirwithjson/source-dest.json
         pwd
-   setup:
+  setup:
         runs-on: ubuntu-20.04
         outputs:
           matrix: ${{ steps.setup-matrix.outputs.matrix }}
@@ -32,14 +32,14 @@ jobs:
           - name: Print Matrix 
             run: echo "matrix content ${{ steps.setup-matrix.outputs.matrix }} "
                      
-    sync-job:
+  sync-job:
         runs-on: ubuntu-20.04
-        needs: [setup-build]
+        needs: [setup]
         continue-on-error: false
         strategy:
           fail-fast: true
           max-parallel: 1
-          matrix: ${{fromJson(needs.setup-build.outputs.matrix)}}
+          matrix: ${{fromJson(needs.setup.outputs.matrix)}}
         steps:
             - name: Print
               run: |
