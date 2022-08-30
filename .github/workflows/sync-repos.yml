@@ -28,7 +28,7 @@ jobs:
             id: setup-matrix
             uses: ftos-forks/conditional-build-matrix@0.1.0
             with:
-              inputFile:  dirwithjson/source-dest.json
+              inputFile: /home/runner/work/sync-repos/sync-repos/dirwithjson/source-dest.json
               filter: '[?Source]'
           - name: Print Matrix 
             run: echo "matrix content ${{ steps.setup-matrix.outputs.matrix }} "
