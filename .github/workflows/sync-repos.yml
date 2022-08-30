@@ -1,0 +1,47 @@
+name: Sync ftos-forks repos
+
+on: push
+
+jobs:
+  extract-repos:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - run: mkdir -p dirwithjson
+    - name: Bash Script
+      shell: 'bash'
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        chmod +x ./scripts/extract.sh
+        sh ./scripts/extract.sh > dirwithjson/source-dest.json
+        pwd
+   setup:
+        runs-on: ubuntu-20.04
+        outputs:
+          matrix: ${{ steps.setup-matrix.outputs.matrix }}
+        steps:
+          - name: Checkout code
+            uses: ftos-forks/checkout@v2
+          - name: Get strategy configuration
+            id: setup-matrix
+            uses: ftos-forks/conditional-build-matrix@0.1.0
+            with:
+              inputFile:  dirwithjson/source-dest.json
+              filter: '[?Source]'
+          - name: Print Matrix 
+            run: echo "matrix content ${{ steps.setup-matrix.outputs.matrix }} "
+                     
+    sync-job:
+        runs-on: ubuntu-20.04
+        needs: [setup-build]
+        continue-on-error: false
+        strategy:
+          fail-fast: true
+          max-parallel: 1
+          matrix: ${{fromJson(needs.setup-build.outputs.matrix)}}
+        steps:
+            - name: Print
+              run: |
+                echo ${{ matrix.Source }}
+                echo ${{ matrix.Destination }}
