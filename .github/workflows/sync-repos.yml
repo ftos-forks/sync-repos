@@ -43,7 +43,7 @@ jobs:
           matrix: ${{fromJson(needs.setup.outputs.matrix)}}
         steps:
           - name: git-sync
-            uses: wei/git-sync@v3
+            uses: ftos-forks/git-sync@v3
             with:
               source_repo: ${{ matrix.Source }}
               source_branch: "refs/remotes/source/*"
@@ -51,7 +51,7 @@ jobs:
               destination_branch: "refs/heads/*"
               ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           - name: git-sync-tags
-            uses: wei/git-sync@v3
+            uses: ftos-forks/git-sync@v3
             with:
               source_repo: ${{ matrix.Source }}
               source_branch: "refs/tags/*"
