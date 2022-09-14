@@ -110,5 +110,9 @@
     {
         "Source": "git@github.com:ASzc/change-string-case-action",
         "Destination": "git@github.com:ftos-forks/change-string-case-action"
+    },
+    {
+        "Source": "git@github.com:actions/upload-artifact",
+        "Destination": "git@github.com:ftos-forks/upload-artifact"
     }
 ]
