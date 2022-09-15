@@ -114,5 +114,9 @@
     {
         "Source": "git@github.com:actions/upload-artifact",
         "Destination": "git@github.com:ftos-forks/upload-artifact"
+    },
+    {
+        "Source": "git@github.com:peter-murray/workflow-application-token-action",
+        "Destination": "git@github.com:ftos-forks/workflow-application-token-action"
     }
 ]
