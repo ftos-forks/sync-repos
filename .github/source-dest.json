@@ -1,122 +1,238 @@
 [
     {
-        "Source": "git@github.com:actions/cache",
-        "Destination": "git@github.com:ftos-forks/cache"
+        "Source": "git@github.com:rajbos/github-fork-updater",
+        "Destination": "git@github.com:ftos-forks/github-fork-updater"
     },
     {
-        "Source": "git@github.com:juliangruber/read-file-action",
-        "Destination": "git@github.com:ftos-forks/read-file-action"
+        "Source": "git@github.com:fjogeleit/http-request-action",
+        "Destination": "git@github.com:ftos-forks/http-request-action"
     },
     {
-        "Source": "git@github.com:tj-actions/changed-files",
-        "Destination": "git@github.com:ftos-forks/changed-files"
+        "Source": "git@github.com:styfle/cancel-workflow-action",
+        "Destination": "git@github.com:ftos-forks/cancel-workflow-action"
     },
     {
-        "Source": "git@github.com:tj-actions/glob",
-        "Destination": "git@github.com:ftos-forks/glob"
-    },
-    {
-        "Source": "git@github.com:tj-actions/branch-names",
-        "Destination": "git@github.com:ftos-forks/branch-names"
-    },
-    {
-        "Source": "git@github.com:cypress-io/github-action",
-        "Destination": "git@github.com:ftos-forks/github-action"
-    },
-    {
-        "Source": "git@github.com:actions/github-script",
-        "Destination": "git@github.com:ftos-forks/github-script"
-    },
-    {
-        "Source": "git@github.com:thollander/actions-comment-pull-request",
-        "Destination": "git@github.com:ftos-forks/actions-comment-pull-request"
-    },
-    {
-        "Source": "git@github.com:peter-evans/repository-dispatch",
-        "Destination": "git@github.com:ftos-forks/repository-dispatch"
-    },
-    {
-        "Source": "git@github.com:GitTools/actions",
-        "Destination": "git@github.com:ftos-forks/actions"
-    },
-    {
-        "Source": "git@github.com:peter-evans/close-issue",
-        "Destination": "git@github.com:ftos-forks/close-issue"
-    },
-    {
-        "Source": "git@github.com:peter-evans/create-or-update-comment",
-        "Destination": "git@github.com:ftos-forks/create-or-update-comment"
-    },
-    {
-        "Source": "git@github.com:sigstore/cosign-installer",
-        "Destination": "git@github.com:ftos-forks/cosign-installer"
-    },
-    {
-        "Source": "git@github.com:docker/setup-buildx-action",
-        "Destination": "git@github.com:ftos-forks/setup-buildx-action"
-    },
-    {
-        "Source": "git@github.com:docker/metadata-action",
-        "Destination": "git@github.com:ftos-forks/metadata-action"
-    },
-    {
-        "Source": "git@github.com:docker/login-action",
-        "Destination": "git@github.com:ftos-forks/login-action"
-    },
-    {
-        "Source": "git@github.com:dorny/test-reporter",
-        "Destination": "git@github.com:ftos-forks/test-reporter"
-    },
-    {
-        "Source": "git@github.com:Azure/functions-action",
-        "Destination": "git@github.com:ftos-forks/functionsaction"
-    },
-    {
-        "Source": "git@github.com:Azure/setup-helm",
-        "Destination": "git@github.com:ftos-forks/setup-helm"
-    },
-    {
-        "Source": "git@github.com:Azure/aks-set-context",
-        "Destination": "git@github.com:ftos-forks/aks-set-context"
-    },
-    {
-        "Source": "git@github.com:Azure/setup-kubectl",
-        "Destination": "git@github.com:ftos-forks/setup-kubectl"
-    },
-    {
-        "Source": "git@github.com:actions/setup-node",
-        "Destination": "git@github.com:ftos-forks/setup-node"
-    },
-    {
-        "Source": "git@github.com:frabert/replace-string-action",
-        "Destination": "git@github.com:ftos-forks/replace-string-action"
-    },
-    {
-        "Source": "git@github.com:Codex-/return-dispatch",
-        "Destination": "git@github.com:ftos-forks/return-dispatch"
-    },
-    {
-        "Source": "git@github.com:Codex-/await-remote-run",
-        "Destination": "git@github.com:ftos-forks/await-remote-run"
-    },
-    {
-        "Source": "git@github.com:mathieudutour/github-tag-action",
-        "Destination": "git@github.com:ftos-forks/github-tag-action-1"
-    },
-    {
-        "Source": "git@github.com:NuGet/setup-nuget",
-        "Destination": "git@github.com:ftos-forks/setup-nuget"
-    },
-    {
-        "Source": "git@github.com:ASzc/change-string-case-action",
-        "Destination": "git@github.com:ftos-forks/change-string-case-action"
+        "Source": "git@github.com:imjohnbo/issue-bot",
+        "Destination": "git@github.com:ftos-forks/issue-bot"
     },
     {
         "Source": "git@github.com:actions/upload-artifact",
         "Destination": "git@github.com:ftos-forks/upload-artifact"
     },
     {
+        "Source": "git@github.com:actions/checkout",
+        "Destination": "git@github.com:ftos-forks/checkout"
+    },
+    {
+        "Source": "git@github.com:Azure/login",
+        "Destination": "git@github.com:ftos-forks/login"
+    },
+    {
+        "Source": "git@github.com:thollander/actions-comment-pull-request",
+        "Destination": "git@github.com:ftos-forks/actions-comment-pull-request"
+    },
+    {
+        "Source": "git@github.com:microsoft/setup-msbuild",
+        "Destination": "git@github.com:ftos-forks/setup-msbuild"
+    },
+    {
+        "Source": "git@github.com:hoisjp/azure-monitor-action",
+        "Destination": "git@github.com:ftos-forks/azure-monitor-action"
+    },
+    {
+        "Source": "git@github.com:peter-evans/create-or-update-comment",
+        "Destination": "git@github.com:ftos-forks/create-or-update-comment"
+    },
+    {
+        "Source": "git@github.com:dorny/test-reporter",
+        "Destination": "git@github.com:ftos-forks/test-reporter"
+    },
+    {
+        "Source": "git@github.com:Azure/aks-set-context",
+        "Destination": "git@github.com:ftos-forks/aks-set-context"
+    },
+    {
+        "Source": "git@github.com:actions/upload-release-asset",
+        "Destination": "git@github.com:ftos-forks/upload-release-asset"
+    },
+    {
+        "Source": "git@github.com:actions/setup-python",
+        "Destination": "git@github.com:ftos-forks/setup-python"
+    },
+    {
+        "Source": "git@github.com:actions/setup-dotnet",
+        "Destination": "git@github.com:ftos-forks/setup-dotnet"
+    },
+    {
+        "Source": "git@github.com:actions/download-artifact",
+        "Destination": "git@github.com:ftos-forks/download-artifact"
+    },
+    {
+        "Source": "git@github.com:actions/create-release",
+        "Destination": "git@github.com:ftos-forks/create-release"
+    },
+    {
+        "Source": "git@github.com:TheAxZim/Whitesource-Scan-Action",
+        "Destination": "git@github.com:ftos-forks/Whitesource-Scan-Action"
+    },
+    {
+        "Source": "git@github.com:actions/github-script",
+        "Destination": "git@github.com:ftos-forks/github-script"
+    },
+    {
+        "Source": "git@github.com:Azure/setup-helm",
+        "Destination": "git@github.com:ftos-forks/setup-helm"
+    },
+    {
+        "Source": "git@github.com:Azure/setup-kubectl",
+        "Destination": "git@github.com:ftos-forks/setup-kubectl"
+    },
+    {
+        "Source": "git@github.com:hashicorp/setup-terraform",
+        "Destination": "git@github.com:ftos-forks/setup-terraform"
+    },
+    {
+        "Source": "git@github.com:anothrNick/github-tag-action",
+        "Destination": "git@github.com:ftos-forks/github-tag-action"
+    },
+    {
+        "Source": "git@github.com:juliangruber/read-file-action",
+        "Destination": "git@github.com:ftos-forks/read-file-action"
+    },
+    {
+        "Source": "git@github.com:peter-evans/close-issue",
+        "Destination": "git@github.com:ftos-forks/close-issue"
+    },
+    {
+        "Source": "git@github.com:dawidd6/action-send-mail",
+        "Destination": "git@github.com:ftos-forks/action-send-mail"
+    },
+    {
+        "Source": "git@github.com:SonarSource/sonarqube-scan-action",
+        "Destination": "git@github.com:ftos-forks/sonarqube-scan-action"
+    },
+    {
+        "Source": "git@github.com:tj-actions/branch-names",
+        "Destination": "git@github.com:ftos-forks/branch-names"
+    },
+    {
         "Source": "git@github.com:peter-murray/workflow-application-token-action",
         "Destination": "git@github.com:ftos-forks/workflow-application-token-action"
+    },
+    {
+        "Source": "git@github.com:actions/cache",
+        "Destination": "git@github.com:ftos-forks/cache"
+    },
+    {
+        "Source": "git@github.com:docker/login-action",
+        "Destination": "git@github.com:ftos-forks/login-action"
+    },
+    {
+        "Source": "git@github.com:docker/metadata-action",
+        "Destination": "git@github.com:ftos-forks/metadata-action"
+    },
+    {
+        "Source": "git@github.com:docker/setup-buildx-action",
+        "Destination": "git@github.com:ftos-forks/setup-buildx-action"
+    },
+    {
+        "Source": "git@github.com:docker/build-push-action",
+        "Destination": "git@github.com:ftos-forks/build-push-action"
+    },
+    {
+        "Source": "git@github.com:actions/setup-node",
+        "Destination": "git@github.com:ftos-forks/setup-node"
+    },
+    {
+        "Source": "git@github.com:NuGet/setup-nuget",
+        "Destination": "git@github.com:ftos-forks/setup-nuget"
+    },
+    {
+        "Source": "git@github.com:svenstaro/upload-release-action",
+        "Destination": "git@github.com:ftos-forks/upload-release-action"
+    },
+    {
+        "Source": "git@github.com:cypress-io/github-action",
+        "Destination": "git@github.com:ftos-forks/github-action"
+    },
+    {
+        "Source": "git@github.com:tj-actions/changed-files",
+        "Destination": "git@github.com:ftos-forks/changed-files"
+    },
+    {
+        "Source": "git@github.com:GitTools/actions",
+        "Destination": "git@github.com:ftos-forks/actions"
+    },
+    {
+        "Source": "git@github.com:Azure/appservice-settings",
+        "Destination": "git@github.com:ftos-forks/appservice-settings"
+    },
+    {
+        "Source": "git@github.com:Azure/cli",
+        "Destination": "git@github.com:ftos-forks/cli"
+    },
+    {
+        "Source": "git@github.com:Azure/webapps-deploy",
+        "Destination": "git@github.com:ftos-forks/webapps-deploy"
+    },
+    {
+        "Source": "git@github.com:Azure/arm-deploy",
+        "Destination": "git@github.com:ftos-forks/arm-deploy"
+    },
+    {
+        "Source": "git@github.com:actions/setup-java",
+        "Destination": "git@github.com:ftos-forks/setup-java"
+    },
+    {
+        "Source": "git@github.com:Azure/docker-login",
+        "Destination": "git@github.com:ftos-forks/docker-login"
+    },
+    {
+        "Source": "git@github.com:jacobtomlinson/gha-find-replace",
+        "Destination": "git@github.com:ftos-forks/gha-find-replace"
+    },
+    {
+        "Source": "git@github.com:sebastianpopp/ftp-action",
+        "Destination": "git@github.com:ftos-forks/ftp-action"
+    },
+    {
+        "Source": "git@github.com:airvzxf/ftp-deployment-action",
+        "Destination": "git@github.com:ftos-forks/ftp-deployment-action"
+    },
+    {
+        "Source": "git@github.com:mathieudutour/github-tag-action",
+        "Destination": "git@github.com:ftos-forks/github-tag-action-1"
+    },
+    {
+        "Source": "git@github.com:ASzc/change-string-case-action",
+        "Destination": "git@github.com:ftos-forks/change-string-case-action"
+    },
+    {
+        "Source": "git@github.com:frabert/replace-string-action",
+        "Destination": "git@github.com:ftos-forks/replace-string-action"
+    },
+    {
+        "Source": "git@github.com:peter-evans/repository-dispatch",
+        "Destination": "git@github.com:ftos-forks/repository-dispatch"
+    },
+    {
+        "Source": "git@github.com:lewagon/wait-on-check-action",
+        "Destination": "git@github.com:ftos-forks/wait-on-check-action"
+    },
+    {
+        "Source": "git@github.com:tj-actions/glob",
+        "Destination": "git@github.com:ftos-forks/glob"
+    },
+    {
+        "Source": "git@github.com:benc-uk/workflow-dispatch",
+        "Destination": "git@github.com:ftos-forks/workflow-dispatch"
+    },
+    {
+        "Source": "git@github.com:suisei-cn/actions-download-file",
+        "Destination": "git@github.com:ftos-forks/actions-download-file"
+    },
+    {
+        "Source": "git@github.com:dawidd6/action-download-artifact",
+        "Destination": "git@github.com:ftos-forks/action-download-artifact"
     }
 ]
