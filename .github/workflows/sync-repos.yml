@@ -1,7 +1,8 @@
 name: Sync ftos-forks repos
 
 on:
-  push
+  schedule:
+    - cron: "0 2 * * *"
   
 jobs:
   extract-repos:
