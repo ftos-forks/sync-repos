@@ -4,7 +4,7 @@ file="rrepos.json"
 
 
 echo "[" > output.txt
-gh repo list ${org} --json name | jq '.[].name' | tr -d '"' > ${file}
+gh api /orgs/ftos-forks/repos --jq '.[].name' --paginate > ${file}
 
 while IFS= read -r line
 do
