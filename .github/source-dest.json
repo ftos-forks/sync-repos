@@ -234,5 +234,57 @@
     {
         "Source": "git@github.com:dawidd6/action-download-artifact",
         "Destination": "git@github.com:ftos-forks/action-download-artifact"
+    },
+    {
+        "Source": "git@github.com:aquasecurity/trivy-action",
+        "Destination": "git@github.com:ftos-forks/trivy-action"
+    },
+    {
+        "Source": "git@github.com:hadolint/hadolint-action",
+        "Destination": "git@github.com:ftos-forks/hadolint-action"
+    },
+    {
+        "Source": "git@github.com:sigstore/cosign-installer",
+        "Destination": "git@github.com:ftos-forks/cosign-installer"
+    },
+    {
+        "Source": "git@github.com:ncipollo/release-action",
+        "Destination": "git@github.com:ftos-forks/release-action"
+    },
+    {
+        "Source": "git@github.com:wei/git-sync",
+        "Destination": "git@github.com:ftos-forks/git-sync"
+    },
+    {
+        "Source": "git@github.com:stCarolas/setup-maven",
+        "Destination": "git@github.com:ftos-forks/setup-maven"
+    },
+    {
+        "Source": "git@github.com:Codex-/return-dispatch",
+        "Destination": "git@github.com:ftos-forks/return-dispatch"
+    },
+    {
+        "Source": "git@github.com:Codex-/await-remote-run",
+        "Destination": "git@github.com:ftos-forks/await-remote-run"
+    },
+    {
+        "Source": "git@github.com:JoshuaTheMiller/conditional-build-matrix",
+        "Destination": "git@github.com:ftos-forks/conditional-build-matrix"
+    },
+    {
+        "Source": "git@github.com:oprypin/find-latest-tag",
+        "Destination": "git@github.com:ftos-forks/find-latest-tag"
+    },
+    {
+        "Source": "git@github.com:jessicalostinspace/bump-semantic-version-action",
+        "Destination": "git@github.com:ftos-forks/bump-semantic-version-action"
+    },
+    {
+        "Source": "git@github.com:trufflesecurity/trufflehog",
+        "Destination": "git@github.com:ftos-forks/trufflehog"
+    },
+    {
+        "Source": "git@github.com:actions-ecosystem/action-bump-semver",
+        "Destination": "git@github.com:ftos-forks/action-bump-semver"
     }
 ]
