@@ -1,11 +1,9 @@
 name: Sync ftos-forks repos
 
-# on:
-#   schedule:
-#     - cron: "0 2 * * *"
-
 on: 
   workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * *"
   
 jobs:
   extract-repos:
@@ -47,19 +45,19 @@ jobs:
             run: |
               echo ${{ matrix.Source }}
               echo ${{ matrix.Destination }}
-          # - name: git-sync
-          #   uses: ftos-forks/git-sync@v3
-          #   with:
-          #     source_repo: ${{ matrix.Source }}
-          #     source_branch: "refs/remotes/source/*"
-          #     destination_repo: ${{ matrix.Destination }}
-          #     destination_branch: "refs/heads/*"
-          #     ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          # - name: git-sync-tags
-          #   uses: ftos-forks/git-sync@v3
-          #   with:
-          #     source_repo: ${{ matrix.Source }}
-          #     source_branch: "refs/tags/*"
-          #     destination_repo: ${{ matrix.Destination }}
-          #     destination_branch: "refs/tags/*"
-          #     ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          - name: git-sync
+            uses: ftos-forks/git-sync@v3
+            with:
+              source_repo: ${{ matrix.Source }}
+              source_branch: "refs/remotes/source/*"
+              destination_repo: ${{ matrix.Destination }}
+              destination_branch: "refs/heads/*"
+              ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          - name: git-sync-tags
+            uses: ftos-forks/git-sync@v3
+            with:
+              source_repo: ${{ matrix.Source }}
+              source_branch: "refs/tags/*"
+              destination_repo: ${{ matrix.Destination }}
+              destination_branch: "refs/tags/*"
+              ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
