@@ -1,60 +1,65 @@
 name: Sync ftos-forks repos
 
-on:
-  schedule:
-    - cron: "0 2 * * *"
+# on:
+#   schedule:
+#     - cron: "0 2 * * *"
+
+on: 
+  workflow_dispatch:
   
 jobs:
   extract-repos:
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-repos-matrix.outputs.matrix }}
     steps:
-    - uses: actions/checkout@v1
-    - name: Bash Script
-      shell: 'bash'
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        chmod +x ./scripts/extract.sh
-        sh ./scripts/extract.sh > ./.github/source-dest.json
-  setup:
-        runs-on: ubuntu-20.04
-        needs: [extract-repos]
-        outputs:
-          matrix: ${{ steps.setup-matrix.outputs.matrix }}
-        steps:
-          - name: Checkout code
-            uses: ftos-forks/checkout@v2
-          - name: Get strategy configuration
-            id: setup-matrix
-            uses: ftos-forks/conditional-build-matrix@0.1.0
-            with:
-              inputFile: './.github/source-dest.json'
-              filter: '[?Source]'
-          - name: Print Matrix 
-            run: echo "matrix content ${{ steps.setup-matrix.outputs.matrix }} "
+      - uses: actions/checkout@v1
+      - name: Set Repos Matrix
+        id: set-repos-matrix
+        shell: 'bash'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          repos=$(gh api /orgs/ftos-forks/repos | jq -r '.[].full_name')
+          for repo in $repos
+          do
+            echo "Fetching parent repo for $repo..."
+            source_repo=$(gh api /repos/$repo | jq -r '.parent.full_name')
+            if [ ! -z "$source_repo" ]; then
+              echo "Source repo: $source_repo"
+              objects+="$(jq -n --arg Source "$source_repo" --arg Destination "$repo" '$ARGS.named')"
+            fi
+          done 
+          list=$(echo $objects | jq -n '. |= [inputs]')
+          echo "::set-output name=matrix::{\"include\":$list}"
                      
   sync-job:
         runs-on: ubuntu-latest
-        needs: [setup]
+        needs: [extract-repos]
         continue-on-error: false
         strategy:
           fail-fast: true
           max-parallel: 4
-          matrix: ${{fromJson(needs.setup.outputs.matrix)}}
+          matrix: ${{fromJson(needs.extract-repos.outputs.matrix)}}
         steps:
-          - name: git-sync
-            uses: ftos-forks/git-sync@v3
-            with:
-              source_repo: ${{ matrix.Source }}
-              source_branch: "refs/remotes/source/*"
-              destination_repo: ${{ matrix.Destination }}
-              destination_branch: "refs/heads/*"
-              ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          - name: git-sync-tags
-            uses: ftos-forks/git-sync@v3
-            with:
-              source_repo: ${{ matrix.Source }}
-              source_branch: "refs/tags/*"
-              destination_repo: ${{ matrix.Destination }}
-              destination_branch: "refs/tags/*"
-              ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          - name: Echo
+            shell: 'bash'
+            run: |
+              echo ${{ matrix.Source }}
+              echo ${{ matrix.Destination }}
+          # - name: git-sync
+          #   uses: ftos-forks/git-sync@v3
+          #   with:
+          #     source_repo: ${{ matrix.Source }}
+          #     source_branch: "refs/remotes/source/*"
+          #     destination_repo: ${{ matrix.Destination }}
+          #     destination_branch: "refs/heads/*"
+          #     ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          # - name: git-sync-tags
+          #   uses: ftos-forks/git-sync@v3
+          #   with:
+          #     source_repo: ${{ matrix.Source }}
+          #     source_branch: "refs/tags/*"
+          #     destination_repo: ${{ matrix.Destination }}
+          #     destination_branch: "refs/tags/*"
+          #     ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
