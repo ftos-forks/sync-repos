@@ -28,7 +28,7 @@ jobs:
               objects+="$(jq -n --arg Source "$source_repo" --arg Destination "$repo" '$ARGS.named')"
             fi
           done 
-          list=$(echo $objects | jq -n '. |= [inputs]' | sed s/\"/'\\\"'/g | sed 's/ //g')
+          list=$(echo $objects | jq -n '. |= [inputs]' | tr -d '[ \n]' | sed s/\"/'\\\"'/g )
           echo "::set-output name=matrix::{\"include\":$list}"
                      
   sync-job:
