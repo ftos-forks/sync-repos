@@ -32,7 +32,6 @@ jobs:
           echo "::set-output name=matrix::{\"include\":$list}"
       - name: Echo Matrix
         shell: 'bash'
-        env:
         run: |
           echo ${{ steps.set-repos-matrix.outputs.matrix }}
                      
