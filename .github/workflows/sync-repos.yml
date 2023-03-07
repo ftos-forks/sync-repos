@@ -30,11 +30,7 @@ jobs:
           done 
           list=$(echo $objects | jq -n '. |= [inputs]' | tr -d ' \n')
           echo "::set-output name=matrix::{\"include\":$list}"
-      - name: Echo Matrix
-        shell: 'bash'
-        run: |
-          echo ${{ steps.set-repos-matrix.outputs.matrix }}
-                     
+
   sync-job:
         runs-on: ubuntu-latest
         needs: [extract-repos]
@@ -44,7 +40,7 @@ jobs:
           max-parallel: 4
           matrix: ${{fromJson(needs.extract-repos.outputs.matrix)}}
         steps:
-          - name: Echo
+          - name: Echo Source and Destination
             shell: 'bash'
             run: |
               echo ${{ matrix.Source }}
