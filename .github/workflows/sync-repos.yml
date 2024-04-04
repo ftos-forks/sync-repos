@@ -23,7 +23,7 @@ jobs:
           do
             echo "Fetching parent repo for $repo..."
             source_repo=$(gh api /repos/$repo --paginate | jq -r '.parent.full_name')
-            if [ ! -z "$source_repo" ]; then
+            if [ ! -z "$source_repo" ] && [ "$source_repo" != "null" ]; then
               echo "Source repo: $source_repo"
               objects+="$(jq -n --arg Source "$source_repo" --arg Destination "$repo" '$ARGS.named')"
             fi
