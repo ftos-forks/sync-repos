@@ -18,11 +18,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          repos=$(gh api /orgs/ftos-forks/repos | jq -r '.[].full_name')
+          repos=$(gh api /orgs/ftos-forks/repos --paginate | jq -r '.[].full_name')
           for repo in $repos
           do
             echo "Fetching parent repo for $repo..."
-            source_repo=$(gh api /repos/$repo | jq -r '.parent.full_name')
+            source_repo=$(gh api /repos/$repo --paginate | jq -r '.parent.full_name')
             if [ ! -z "$source_repo" ]; then
               echo "Source repo: $source_repo"
               objects+="$(jq -n --arg Source "$source_repo" --arg Destination "$repo" '$ARGS.named')"
